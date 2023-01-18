@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-9">
+      <title>INVENTÁRIO</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+        <div class=" col-8 m-auto pt-2 pb-2 text-center">
+            <h1>Cadastro</h1>
+        </div>
+
+         <div class=" col-8 m-auto pt-3 pb-2 text-center">
+              <a href="/" class="btn btn-primary">Voltar</a>
+         </div>
+
+        <div class=" col-6 m-auto pt-3 pb-2 text-center">
+           <form name="form" id="form" action="{% if db %}/update/{{db.id}}/{%else%}/create/{% endif %}" method="post">
+                 {% csrf_token %}
+                 <div class="form-group mt-4">Modelo: {{form.modelo}}</div>
+                 <div class="form-group mt-4">Marca: {{form.marca}}</div>
+                 <div class="form-group mt-4">Preço: {{form.preco}}</div>
+                 <input type="submit" class="btn btn-sucess" value="Salvar" >
+            </form>
+        </div>
+
+</body>
+</html>
